@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>working with google map</title>
+	<style type="text/css">
+	#map{
+		height: 400px;
+		width:1000px; 
+	}
+	</style>
+</head>
+<body>
+<h1>My location map</h1>
+
+<div id="map"></div>
+<button onclick="getLocation()">Get User's Location</button>
+
+
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdCJKnM3hXEDqfF2C4sC-t2bqK193fXFI&callback=initMap"
+  type="text/javascript" async defer></script>
+
+
+  <script type="text/javascript">
+  	var map;
+  	var mapContainer = document.getElementById('map');
+  	function initMap() {
+  		var mapOptions ={
+  			zoom: 20,
+  			center:{lat: 6.4298642,lng:7.4941106},
+  			mapTypeId: google.maps.MapTypeId.ROADMAP //SATELITE TERRAIN
+  		}
+  		map = new google.maps.Map(mapContainer,mapOptions);
+  		var marker = new google.maps.Marker({
+  			position: {lat: 6.4298642,lng:7.4941106},
+  			map: map
+  		})
+  	}
+  </script>
+</body>
+</html>

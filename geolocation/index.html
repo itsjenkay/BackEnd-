@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geolocation API</title>
+</head>
+<body>
+<h1>Geolocation API</h1>
+<button onclick="getLocation()">Get User's Location</button>
+
+ 
+<script type="text/javascript">
+	
+	function getLocation() {
+		var geolocation;
+		if (window.navigator.geolocation) {
+			geolocation = window.navigator.geolocation;
+			var options = {enableHighAccuracy:true};
+			//Get users current location using getCurrentPosition() method
+			geolocation.getCurrentPosition(showLocation, errorHandler,options);
+		}else{
+			alert("Sorry, your browser does not support geolocation");
+		}
+
+		function showLocation(position) {
+			var my_lat = position.coords.latitude;
+			var my_long = position.coords.longitude;
+			alert("Your loaction details are\nLatitude: "+my_lat+ "\nLongitude: "+my_long);
+		}
+
+		function errorHandler() {
+			alert("Sorry, you declined sharing your loaction");
+		}
+	}
+</script>
+
+</body>
+</html>

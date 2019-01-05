@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Puzzle Game</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="container">
+	<div class="header">
+		<h1>PUZZLE GAME</h1>
+	</div>
+	<div class="content">
+		<h1>Welcome to Games Inc.</h1>
+		<h2>Play Free Puzzle Games</h2>
+		<p>Rearrange the pictures on the left back to the image below</p>
+		<div class="puzzleframe">
+			<img src="images/fishermans-wharf-sign.jpg" style="float: left; margin-right: 13px;">
+			<div class="puzzles">
+				<img src="images/p1.png" id="img1" draggable="true" ondragstart="drag(event)">
+				<img src="images/p2.png" id="img2" draggable="true" ondragstart="drag(event)">
+				<img src="images/p3.png" id="img3" draggable="true" ondragstart="drag(event)">
+				<img src="images/p4.png" id="img4" draggable="true" ondragstart="drag(event)">
+			</div>
+			<div class="dropbasket">
+				<div id="p1" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+				<div id="p2"ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+				<div id="p3"ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+				<div id="p4"ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/game.js"></script>
+</body>
+</html>
